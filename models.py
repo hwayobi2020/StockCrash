@@ -123,8 +123,8 @@ def calculate_wavelet_features(sequences, wavelet='db4', level=3, feature_stats=
 # file load
 ############################################################
 try:
-    stock_df = pd.read_parquet('D://assist//00.SCIE paper 1//codes//stock_all_vkospi_sample.parquet')
-    fin_df   = pd.read_parquet('D://assist//00.SCIE paper 1//codes//stock_fin_result_with_vkospi_all_sample.parquet')
+    stock_df = pd.read_parquet('stock_all_vkospi_sample.parquet')
+    fin_df   = pd.read_parquet('stock_fin_result_with_vkospi_all_sample.parquet')
     print("Successfully loaded data from Parquet files.")
 except FileNotFoundError:
     print("Warning: Parquet files not found. Please ensure the path is correct or provide dummy data.")
@@ -1337,6 +1337,7 @@ except NameError as e:
     print(f"Error: A required variable for feature importance generation is not defined: {e}")
 except Exception as e:
     print(f"An error occurred while calculating/displaying CatBoost feature importances: {e}")
+
 
 
 print("\nScript finished.")
